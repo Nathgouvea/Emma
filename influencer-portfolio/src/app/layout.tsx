@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Dancing_Script, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -60,7 +62,13 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${dancingScript.variable} ${playfairDisplay.variable}`}
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Navigation />
+        <div className="animate-fade-in">
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }

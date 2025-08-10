@@ -1,23 +1,34 @@
 "use client";
 
 import { useState } from "react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Filter, ExternalLink, Heart, MapPin, Camera } from "lucide-react";
 
+type PortfolioCategory = "all" | "travel" | "lifestyle" | "wellness";
+
+interface PortfolioItem {
+  id: number;
+  title: string;
+  category: Exclude<PortfolioCategory, "all">;
+  description: string;
+  location: string;
+  image: string;
+  featured: boolean;
+  tags: string[];
+}
+
 export default function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState("all");
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [activeFilter, setActiveFilter] = useState<PortfolioCategory>("all");
+  const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
 
   const filters = [
-    { id: "all", label: "All Work", count: 12 },
-    { id: "travel", label: "Travel", count: 5 },
-    { id: "lifestyle", label: "Lifestyle", count: 4 },
-    { id: "wellness", label: "Wellness", count: 3 },
+    { id: "all" as const, label: "All Work", count: 12 },
+    { id: "travel" as const, label: "Travel", count: 5 },
+    { id: "lifestyle" as const, label: "Lifestyle", count: 4 },
+    { id: "wellness" as const, label: "Wellness", count: 3 },
   ];
 
-  const portfolioItems = [
+  const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
       title: "Puerto Rican Sunset",
@@ -152,14 +163,12 @@ export default function Portfolio() {
       ? portfolioItems
       : portfolioItems.filter((item) => item.category === activeFilter);
 
-  const handleFilterChange = (filterId) => {
+  const handleFilterChange = (filterId: PortfolioCategory) => {
     setActiveFilter(filterId);
   };
 
   return (
     <>
-      <Navigation />
-
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-sandy-beige/30 via-white to-ocean-blue/20">
@@ -432,8 +441,6 @@ export default function Portfolio() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <Footer />
     </>
   );
 }

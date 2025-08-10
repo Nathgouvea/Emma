@@ -1,7 +1,5 @@
-"use client";
+'use client';
 
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import {
   Instagram,
@@ -108,8 +106,6 @@ export default function WorkWithMe() {
 
   return (
     <>
-      <Navigation />
-
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-sandy-beige/30 via-white to-ocean-blue/20">
@@ -467,8 +463,6 @@ export default function WorkWithMe() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }
