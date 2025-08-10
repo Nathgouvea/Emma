@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Calendar,
@@ -162,8 +160,6 @@ export default function BlogPage() {
 
   return (
     <>
-      <Navigation />
-
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-sandy-beige via-white to-ocean-blue/10">
@@ -490,8 +486,6 @@ export default function BlogPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

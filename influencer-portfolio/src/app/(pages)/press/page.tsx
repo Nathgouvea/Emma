@@ -1,8 +1,6 @@
-"use client";
+'use client';
 
 import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import {
   Award,
   Star,
@@ -186,8 +184,6 @@ const awards = [
 export default function PressPage() {
   return (
     <>
-      <Navigation />
-
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-sunrise-gold/10 via-white to-coral-pink/10">
@@ -515,8 +511,6 @@ export default function PressPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

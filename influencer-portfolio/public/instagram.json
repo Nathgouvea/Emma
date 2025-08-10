@@ -1,0 +1,10 @@
+{
+  "data": [
+    { "id": "1", "media_url": "/api/placeholder/300/300", "permalink": "#", "caption": "Beach sunrise", "like_count": 1234, "comments_count": 45 },
+    { "id": "2", "media_url": "/api/placeholder/300/300", "permalink": "#", "caption": "Yoga flow", "like_count": 980, "comments_count": 30 },
+    { "id": "3", "media_url": "/api/placeholder/300/300", "permalink": "#", "caption": "City lights", "like_count": 756, "comments_count": 22 },
+    { "id": "4", "media_url": "/api/placeholder/300/300", "permalink": "#", "caption": "Mountain hike", "like_count": 1320, "comments_count": 54 },
+    { "id": "5", "media_url": "/api/placeholder/300/300", "permalink": "#", "caption": "Cafe moments", "like_count": 642, "comments_count": 18 },
+    { "id": "6", "media_url": "/api/placeholder/300/300", "permalink": "#", "caption": "Meditation time", "like_count": 811, "comments_count": 27 }
+  ]
+}

@@ -1,13 +1,11 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+'use client';
+
 import { motion } from "framer-motion";
-import { Heart, MapPin, Yoga, Dog, Star, Compass } from "lucide-react";
+import { Heart, MapPin, Flower, Dog, Star, Compass } from "lucide-react";
 
 export default function About() {
   return (
     <>
-      <Navigation />
-      
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-sandy-beige/30 via-white to-ocean-blue/20">
@@ -132,7 +130,7 @@ export default function About() {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <Yoga className="text-ocean-blue" size={24} />
+                  <Flower className="text-ocean-blue" size={24} />
                   <h2 className="text-3xl lg:text-4xl font-dancing-script text-dark">
                     Puerto Rican Yoga Journey
                   </h2>
@@ -307,8 +305,6 @@ export default function About() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

@@ -1,8 +1,6 @@
-"use client";
+'use client';
 
 import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import {
   Users,
   MapPin,
@@ -134,8 +132,6 @@ const brandTestimonials: BrandTestimonial[] = [
 export default function AudiencePage() {
   return (
     <>
-      <Navigation />
-
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-ocean-blue/10 via-white to-sunrise-gold/10">
@@ -518,8 +514,6 @@ export default function AudiencePage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }

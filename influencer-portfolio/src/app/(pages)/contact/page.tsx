@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -17,6 +15,7 @@ import {
   Calendar,
   Users,
 } from "lucide-react";
+import InstagramFeed from "@/components/InstagramFeed";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -122,8 +121,6 @@ export default function ContactPage() {
 
   return (
     <>
-      <Navigation />
-
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-sandy-beige via-white to-ocean-blue/10">
@@ -466,6 +463,8 @@ export default function ContactPage() {
           </div>
         </section>
 
+        <InstagramFeed />
+
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-coral-pink to-ocean-blue text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -512,8 +511,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   );
 }
