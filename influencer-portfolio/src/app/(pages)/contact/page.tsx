@@ -15,6 +15,7 @@ import {
   Calendar,
   Users,
 } from "lucide-react";
+import InstagramFeed from "@/components/InstagramFeed";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -461,6 +462,8 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        <InstagramFeed />
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-coral-pink to-ocean-blue text-white">

@@ -60,7 +60,7 @@ _Last updated: 2025-08-10_
   - Configure build tools and deployment pipeline
   - Set up version control and project structure
 
-- [ ] **CMS Integration Planning**
+- [x] **CMS Integration Planning (Started)**
 
   - Evaluate CMS options (Strapi, Contentful, or headless WordPress)
   - Design content models and relationships
@@ -128,7 +128,7 @@ _Last updated: 2025-08-10_
 
 ### Week 7: Enhanced Functionality
 
-- [ ] **Interactive Features**
+- [x] **Interactive Features (In Progress)**
 
   - Animated quote slider
   - Instagram feed integration
