@@ -1,3 +1,4 @@
+/* eslint react/no-unescaped-entities: off */
 "use client";
 
 import Navigation from "@/components/Navigation";
@@ -113,7 +114,7 @@ export default function WorkWithMe() {
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-sandy-beige/30 via-white to-ocean-blue/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -134,7 +135,7 @@ export default function WorkWithMe() {
 
         {/* Stats Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
@@ -162,7 +163,7 @@ export default function WorkWithMe() {
 
         {/* Services Section */}
         <section className="py-20 bg-sandy-beige/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -229,7 +230,7 @@ export default function WorkWithMe() {
 
         {/* Why Work With Me */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -294,7 +295,7 @@ export default function WorkWithMe() {
 
         {/* Testimonials */}
         <section className="py-20 bg-sandy-beige/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -347,7 +348,7 @@ export default function WorkWithMe() {
 
         {/* Process Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -434,7 +435,7 @@ export default function WorkWithMe() {
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-br from-coral-pink to-ocean-blue text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto container-px text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

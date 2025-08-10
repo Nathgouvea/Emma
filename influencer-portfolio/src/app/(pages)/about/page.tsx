@@ -1,7 +1,10 @@
+/* eslint react/no-unescaped-entities: off */
+'use client';
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Heart, MapPin, Yoga, Dog, Star, Compass } from "lucide-react";
+import { Heart, MapPin, Star, Compass, Flower } from "lucide-react";
 
 export default function About() {
   return (
@@ -11,7 +14,7 @@ export default function About() {
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-sandy-beige/30 via-white to-ocean-blue/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -31,7 +34,7 @@ export default function About() {
 
         {/* Alaska Roots */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -77,7 +80,7 @@ export default function About() {
 
         {/* Ballet & Movement */}
         <section className="py-20 bg-sandy-beige/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 className="relative order-2 lg:order-1"
@@ -123,7 +126,7 @@ export default function About() {
 
         {/* Yoga Journey */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -132,7 +135,7 @@ export default function About() {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <Yoga className="text-ocean-blue" size={24} />
+                  <Flower className="text-ocean-blue" size={24} />
                   <h2 className="text-3xl lg:text-4xl font-dancing-script text-dark">
                     Puerto Rican Yoga Journey
                   </h2>
@@ -169,7 +172,7 @@ export default function About() {
 
         {/* Dog Rescue Story */}
         <section className="py-20 bg-sandy-beige/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 className="relative order-2 lg:order-1"
@@ -215,7 +218,7 @@ export default function About() {
 
         {/* Philosophy Section */}
         <section className="py-20 bg-gradient-to-br from-ocean-blue/10 to-sandy-beige/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -275,7 +278,7 @@ export default function About() {
 
         {/* CTA Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto container-px text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -292,7 +295,7 @@ export default function About() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/work-with-me"
-                  className="bg-coral-pink text-white px-8 py-4 rounded-full font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                  className="bg-gradient-to-r from-coral-pink to-sunrise-gold text-white px-8 py-4 rounded-full font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                 >
                   Let's Work Together
                 </a>

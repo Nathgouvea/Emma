@@ -1,3 +1,4 @@
+/* eslint react/no-unescaped-entities: off */
 "use client";
 
 import { useState } from "react";
@@ -6,18 +7,31 @@ import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Filter, ExternalLink, Heart, MapPin, Camera } from "lucide-react";
 
+type PortfolioCategory = "all" | "travel" | "lifestyle" | "wellness";
+
+interface PortfolioItem {
+  id: number;
+  title: string;
+  category: Exclude<PortfolioCategory, "all">;
+  description: string;
+  location: string;
+  image: string;
+  featured: boolean;
+  tags: string[];
+}
+
 export default function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState("all");
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [activeFilter, setActiveFilter] = useState<PortfolioCategory>("all");
+  const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
 
   const filters = [
-    { id: "all", label: "All Work", count: 12 },
-    { id: "travel", label: "Travel", count: 5 },
-    { id: "lifestyle", label: "Lifestyle", count: 4 },
-    { id: "wellness", label: "Wellness", count: 3 },
+    { id: "all" as const, label: "All Work", count: 12 },
+    { id: "travel" as const, label: "Travel", count: 5 },
+    { id: "lifestyle" as const, label: "Lifestyle", count: 4 },
+    { id: "wellness" as const, label: "Wellness", count: 3 },
   ];
 
-  const portfolioItems = [
+  const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
       title: "Puerto Rican Sunset",
@@ -147,12 +161,12 @@ export default function Portfolio() {
     },
   ];
 
-  const filteredItems =
+  const filteredItems: PortfolioItem[] =
     activeFilter === "all"
       ? portfolioItems
       : portfolioItems.filter((item) => item.category === activeFilter);
 
-  const handleFilterChange = (filterId) => {
+  const handleFilterChange = (filterId: PortfolioCategory) => {
     setActiveFilter(filterId);
   };
 
@@ -163,7 +177,7 @@ export default function Portfolio() {
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-sandy-beige/30 via-white to-ocean-blue/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -184,7 +198,7 @@ export default function Portfolio() {
 
         {/* Filter Section */}
         <section className="py-12 bg-white border-b border-sandy-beige/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <div className="flex flex-wrap justify-center gap-4">
               {filters.map((filter) => (
                 <motion.button
@@ -211,7 +225,7 @@ export default function Portfolio() {
 
         {/* Portfolio Grid */}
         <section className="py-20 bg-sandy-beige/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeFilter}
@@ -297,9 +311,9 @@ export default function Portfolio() {
 
                         {/* Tags */}
                         <div className="flex flex-wrap gap-2">
-                          {item.tags.map((tag, tagIndex) => (
+                          {item.tags.map((tag: string, tagIndex: number) => (
                             <span
-                              key={tagIndex}
+                              key={`${item.id}-${tag}-${tagIndex}`}
                               className="bg-sandy-beige/30 text-dark/70 text-xs px-2 py-1 rounded-full"
                             >
                               {tag}
@@ -325,9 +339,7 @@ export default function Portfolio() {
                 <h3 className="text-xl font-medium text-dark/50 mb-2">
                   No items found
                 </h3>
-                <p className="text-dark/40">
-                  Try adjusting your filter selection
-                </p>
+                <p className="text-dark/40">Try adjusting your filter selection</p>
               </motion.div>
             )}
           </div>
@@ -335,7 +347,7 @@ export default function Portfolio() {
 
         {/* CTA Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto container-px text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -353,7 +365,7 @@ export default function Portfolio() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/work-with-me"
-                  className="bg-coral-pink text-white px-8 py-4 rounded-full font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                  className="bg-gradient-to-r from-coral-pink to-sunrise-gold text-white px-8 py-4 rounded-full font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                 >
                   Let's Collaborate
                 </a>

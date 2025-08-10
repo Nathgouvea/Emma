@@ -1,3 +1,4 @@
+/* eslint react/no-unescaped-entities: off */
 "use client";
 
 import { motion } from "framer-motion";
@@ -139,7 +140,7 @@ export default function AudiencePage() {
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-ocean-blue/10 via-white to-sunrise-gold/10">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto container-px text-center">
             <motion.h1
               className="text-5xl lg:text-7xl font-dancing-script text-dark mb-6"
               initial={{ opacity: 0, y: 30 }}
@@ -163,7 +164,7 @@ export default function AudiencePage() {
 
         {/* Key Stats */}
         <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto container-px">
             <div className="text-center mb-16">
               <motion.h2
                 className="text-4xl lg:text-5xl font-dancing-script text-dark mb-6"
@@ -211,7 +212,7 @@ export default function AudiencePage() {
 
         {/* Demographics */}
         <section className="py-20 bg-sandy-beige/20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto container-px">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -295,7 +296,7 @@ export default function AudiencePage() {
 
         {/* Top Locations */}
         <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto container-px">
             <div className="text-center mb-16">
               <motion.h2
                 className="text-4xl lg:text-5xl font-dancing-script text-dark mb-6"
@@ -343,7 +344,7 @@ export default function AudiencePage() {
 
         {/* Engagement Metrics */}
         <section className="py-20 bg-gradient-to-br from-coral-pink/10 to-ocean-blue/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto container-px">
             <div className="text-center mb-16">
               <motion.h2
                 className="text-4xl lg:text-5xl font-dancing-script text-dark mb-6"
@@ -415,7 +416,7 @@ export default function AudiencePage() {
 
         {/* Brand Testimonials */}
         <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto container-px">
             <div className="text-center mb-16">
               <motion.h2
                 className="text-4xl lg:text-5xl font-dancing-script text-dark mb-6"
@@ -485,7 +486,7 @@ export default function AudiencePage() {
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-coral-pink to-ocean-blue text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto container-px text-center">
             <motion.h2
               className="text-4xl lg:text-5xl font-dancing-script mb-6"
               initial={{ opacity: 0, y: 30 }}

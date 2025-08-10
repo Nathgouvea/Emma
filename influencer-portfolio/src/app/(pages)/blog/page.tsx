@@ -1,3 +1,4 @@
+/* eslint react/no-unescaped-entities: off */
 "use client";
 
 import { useState } from "react";
@@ -167,7 +168,7 @@ export default function BlogPage() {
       <main className="pt-20 min-h-screen">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-sandy-beige via-white to-ocean-blue/10">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto container-px text-center">
             <motion.h1
               className="text-5xl lg:text-7xl font-dancing-script text-dark mb-6"
               initial={{ opacity: 0, y: 30 }}
@@ -190,7 +191,7 @@ export default function BlogPage() {
 
         {/* Search and Filter Section */}
         <section className="py-12 bg-white border-b border-sandy-beige">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
               {/* Search Bar */}
               <div className="relative w-full lg:w-96">
@@ -233,7 +234,7 @@ export default function BlogPage() {
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (
           <section className="py-20 bg-sandy-beige/20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto container-px">
               <motion.h2
                 className="text-3xl lg:text-4xl font-dancing-script text-dark mb-12 text-center"
                 initial={{ opacity: 0, y: 30 }}
@@ -339,7 +340,7 @@ export default function BlogPage() {
 
         {/* Regular Posts */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto container-px">
             <motion.h2
               className="text-3xl lg:text-4xl font-dancing-script text-dark mb-12 text-center"
               initial={{ opacity: 0, y: 30 }}
@@ -451,7 +452,7 @@ export default function BlogPage() {
 
         {/* Newsletter Signup */}
         <section className="py-20 bg-gradient-to-r from-coral-pink to-ocean-blue text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto container-px text-center">
             <motion.h2
               className="text-4xl lg:text-5xl font-dancing-script mb-6"
               initial={{ opacity: 0, y: 30 }}

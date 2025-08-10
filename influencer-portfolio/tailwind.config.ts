@@ -13,7 +13,7 @@ const config: Config = {
         "sunrise-gold": "#FFB347",
         "coral-pink": "#FF6B6B",
         "ocean-blue": "#4ECDC4",
-        "sandy-beige": "#F7E7CE",
+        "sandy-beige": "#FBF6EE",
         "sage-green": "#A8D5BA",
         dark: "#2C3E50",
         light: "#F8F9FA",
@@ -73,6 +73,7 @@ const config: Config = {
           "0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
         strong:
           "0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+        "ambient-beige": "0 20px 45px -20px rgba(182, 141, 76, 0.25)",
       },
       borderRadius: {
         "4xl": "2rem",

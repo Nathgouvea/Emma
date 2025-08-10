@@ -1,7 +1,9 @@
+/* eslint react/no-unescaped-entities: off */
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, Play, Instagram, Heart } from 'lucide-react';
+import { useRef } from 'react';
 
 const Hero = () => {
   const scrollToContent = () => {
@@ -11,44 +13,53 @@ const Hero = () => {
     }
   };
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
+  const yParallax = useTransform(scrollYProgress, [0, 1], ["0vh", "15vh"]);
+  const opacityParallax = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video/Image Placeholder */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sandy-beige via-white to-ocean-blue/20">
-        {/* Placeholder for video/slideshow - replace with actual video component */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-        
+    <section ref={containerRef} className="relative h-[92vh] sm:h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Gradient / Video Layer */}
+      <motion.div
+        style={{ y: yParallax, opacity: opacityParallax }}
+        className="absolute inset-0 bg-gradient-to-br from-sandy-beige via-white to-ocean-blue/20"
+      >
+        {/* Dim overlay for contrast */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,107,107,0.18),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(78,205,196,0.18),transparent_35%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+
         {/* Floating Elements */}
         <motion.div
-          className="absolute top-20 left-10 text-coral-pink opacity-20"
+          className="absolute top-20 left-10 text-coral-pink/80 opacity-20"
           animate={{ y: [0, -20, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
           <Heart size={40} />
         </motion.div>
-        
+
         <motion.div
-          className="absolute top-32 right-20 text-sunrise-gold opacity-20"
+          className="absolute top-32 right-20 text-sunrise-gold/80 opacity-20"
           animate={{ y: [0, 15, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         >
           <Instagram size={30} />
         </motion.div>
-        
+
         <motion.div
-          className="absolute bottom-32 left-20 text-ocean-blue opacity-20"
+          className="absolute bottom-32 left-20 text-ocean-blue/80 opacity-20"
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         >
           <Play size={35} />
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         {/* Main Tagline */}
         <motion.h1
-          className="text-4xl sm:text-5xl lg:text-7xl font-dancing-script text-dark mb-6 leading-tight"
+          className="text-[2.5rem] sm:text-5xl lg:text-7xl font-dancing-script text-dark mb-6 leading-tight"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -85,7 +96,7 @@ const Hero = () => {
             Explore My Work
             <ArrowDown size={20} />
           </motion.a>
-          
+
           <motion.a
             href="/work-with-me"
             className="border-2 border-coral-pink text-coral-pink px-8 py-4 rounded-full font-medium text-lg hover:bg-coral-pink hover:text-white transition-all duration-300"

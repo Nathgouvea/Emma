@@ -60,7 +60,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${dancingScript.variable} ${playfairDisplay.variable}`}
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased bg-[linear-gradient(180deg,rgba(251,246,238,1)_0%,rgba(255,255,255,1)_40%,rgba(251,246,238,0.6)_100%)] min-h-screen">{children}</body>
     </html>
   );
 }

@@ -4,7 +4,7 @@
 
 :root {
   /* Design System Colors */
-  --color-sandy-beige: #f5f1e8;
+  --color-sandy-beige: #fbf6ee;
   --color-coral-pink: #ff6b6b;
   --color-sunrise-gold: #ffb347;
   --color-ocean-blue: #4ecdc4;
@@ -54,6 +54,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/***** Layout helpers *****/
+.container-px {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) {
+  .container-px { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .container-px { padding-left: 2rem; padding-right: 2rem; }
+}
+
+.h1-script {
+  font-family: var(--font-script);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -78,7 +94,7 @@ html {
 }
 
 /* Focus styles */
-*:focus {
+*:focus-visible {
   outline: 2px solid var(--color-coral-pink);
   outline-offset: 2px;
 }
