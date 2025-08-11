@@ -37,5 +37,3 @@ Notes
 
 - Prefer RSC; move to Client only when necessary for interactions.
 - Respect `prefers-reduced-motion` in animated components.
-
-

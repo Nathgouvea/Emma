@@ -67,5 +67,3 @@ Defines headings and content hierarchy per page to guide design and development.
 - H1: Press & Features
 - H2: Featured Logos
 - H2: Interviews & Articles
-
-

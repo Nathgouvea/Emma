@@ -1,0 +1,123 @@
+# Cursor Rules for Emma (Influencer Portfolio Website)
+
+## Scope
+
+- Follow `requirements.md` and `project-plan.md` exactly.
+- Default to the defined stack. Do NOT add or suggest new dependencies, tools, or services without explicit user approval.
+
+## Locked Tech Stack
+
+- Framework: Next.js 14+ (App Router) with TypeScript
+- Styling: Tailwind CSS (prefer utility classes; use minimal custom CSS when needed)
+- State: React Context only; avoid additional state libraries
+- CMS: None for now. All content is static (MDX/JSON).
+- Images: `next/image`
+- SEO: Next.js Metadata API
+- Analytics: Google Analytics 4 (gtag) loaded non-blocking
+- Hosting: GitHub Pages (static export)
+
+## Allowed Dependencies
+
+- Core: `next`, `react`, `react-dom`, `typescript`
+- Styling: `tailwindcss`, `postcss`, `autoprefixer`
+- Anything else requires explicit approval. Avoid: CSS-in-JS, UI kits, form libs, animation libs, additional state managers.
+
+## Project Structure (App Router)
+
+- `app/` for routes
+  - `app/layout.tsx` provides global shell and `Metadata`
+  - `app/page.tsx` for the Home page
+  - Use route groups when helpful: `app/(marketing)/...`
+- `components/` for shared components
+  - Subfolders by domain: `components/nav`, `components/footer`, `components/portfolio`
+- `styles/` for Tailwind and any minimal global CSS
+- `lib/` for small utilities (fetchers, content adapters)
+- `public/` for static assets when necessary
+
+## Assets
+
+- Place all image assets in `public/images/`.
+- Use descriptive, kebab-case filenames (e.g., `ballet-portrait-01.jpg`).
+- Prefer WebP/JPEG with appropriate compression; avoid raw PNGs unless transparency is needed.
+- Always render images via `next/image` with explicit sizes and responsive layout.
+
+## Coding Conventions
+
+- TypeScript: enable strict types; annotate public APIs and component props.
+- Components: Prefer Server Components. Mark Client Components only when needed (interactive UI, animations, form handling).
+- Tailwind:
+  - Use semantic, composable class stacks; avoid arbitrary values unless necessary.
+  - Extract repeated class stacks into small wrapper components or `cn()` helper if already present. Do not add a utility library without approval.
+- Accessibility (WCAG 2.1 AA) — the website must comply across all pages and interactions:
+  - Semantic HTML with proper landmarks (`header`, `nav`, `main`, `footer`) and meaningful heading hierarchy.
+  - Keyboard: all interactive elements reachable and operable via keyboard; include a "Skip to content" link.
+  - Focus: clear visible focus states; manage focus on route changes and in dialogs/lightboxes; avoid focus traps.
+  - Images/media: descriptive `alt` text; avoid text-in-images; provide captions/transcripts for video where applicable; no auto-play audio.
+  - Color and contrast: meet AA contrast ratios (text 4.5:1; large text 3:1; UI components/graphics 3:1). Do not convey meaning by color alone.
+  - Motion: respect `prefers-reduced-motion`; provide reduced or no-motion variants for parallax and other animations.
+  - Forms: accessible labels and descriptions; inline error messaging (aria-live) not color-only; helpful validation hints.
+  - ARIA: prefer native elements; use ARIA only when necessary and valid.
+  - Testing: run Lighthouse Accessibility and keyboard-only/screen reader smoke tests before merging.
+- Performance:
+  - Use `next/image` with sizes and lazy loading.
+  - Prefer static generation (SSG) where possible; use RSC data fetching.
+  - Avoid client-side JS unless required by UX; tree-shake and code split.
+- SEO:
+  - Use Metadata API for title, description, OpenGraph, Twitter.
+  - Meaningful headings (H1 per page), canonical and robots when needed.
+
+## Pages & Features (from Requirements)
+
+- Implement 5 pages: Home, About, Portfolio, Work With Me, Contact.
+- Special features: parallax hero, animated quote slider, hover effects, sticky nav, lightbox, Instagram feed.
+- Implementation guidance:
+  - Prefer CSS and small client components for animations. If a complex timeline is absolutely required, propose `framer-motion` but do NOT add without approval.
+  - Lightbox: implement minimal custom overlay first; avoid adding libraries.
+  - Instagram feed: start with server-side fetch of a mock/service layer. Do not add SDKs; use a server route + cache if integrated later.
+
+## Forms
+
+- Use native HTML validation and accessible labels.
+- No server runtime on GitHub Pages. Prefer `mailto:` action with native validation and a honeypot. If a backend is required, propose a third-party endpoint (requires approval) and implement as a minimal client-side POST.
+
+## CMS
+
+- Out of scope for now. Do not add or integrate any CMS until explicitly approved.
+
+## Deployment
+
+- GitHub Pages static export: configure `next.config.js` with `output: 'export'` and `images: { unoptimized: true }`. Use GitHub Actions for CI/CD.
+- Do not introduce self-hosted services.
+
+## Agent Behavior
+
+- When scaffolding pages/components:
+  - Create files under `app/` and `components/` using the structure above.
+  - Provide `export const metadata` per page. Default to meaningful titles and descriptions.
+  - Use Tailwind utilities; no external UI libs.
+- When editing code:
+  - Keep edits minimal and localized; avoid broad refactors unless requested.
+  - Do not reformat unrelated files.
+  - Do not change `package.json` without user approval.
+- When suggesting changes:
+  - Offer at most one minimal-dependency approach. If a dependency might help, clearly label as "requires approval".
+
+## Commit & PR Guidelines
+
+- Commits: concise, imperative, scoped messages (e.g., "add home hero section with responsive video").
+- PRs must state:
+  - What changed and why,
+  - Any user-facing impact,
+  - Performance/accessibility considerations,
+  - Confirmation that no new deps were added (or explicit request for approval).
+
+## Definition of Done
+
+- Lint/type check passes.
+- Meets accessibility and performance targets (aim 90+ Lighthouse, good CWV where testable).
+- Matches `requirements.md` scope; avoids out-of-scope features and dependencies.
+
+## Non-Goals
+
+- No new state libraries, CSS-in-JS, UI kits, or animation libs without approval.
+- No databases or custom backends; use static generation only.

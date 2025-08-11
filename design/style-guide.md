@@ -36,5 +36,3 @@
 ## Components (See `components/component-library.md`)
 
 - Buttons, Nav (sticky), Footer, Cards, Lightbox, Quote Slider, Instagram Feed, Forms
-
-

@@ -20,5 +20,3 @@ Owner: Emma + Dev support
 - [ ] Verify accessibility copy (alts, captions)
 
 Assets go under `public/images/` using kebab-case filenames.
-
-

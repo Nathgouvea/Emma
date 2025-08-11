@@ -23,5 +23,3 @@
 - Ensure clear headings and scannable content for quick decision making.
 - Strong color contrast for readability in varied environments.
 - Keyboard-accessible navigation and components (filters, lightbox, sliders, forms).
-
-

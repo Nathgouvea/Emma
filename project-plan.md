@@ -7,7 +7,7 @@ _Last updated: 2025-08-10_
 **Project Name:** Influencer Portfolio Website  
 **Timeline:** 6-8 weeks  
 **Team Size:** 1-2 developers + designer  
-**Technology Stack:** Modern web technologies with CMS integration
+**Technology Stack:** Next.js + Tailwind (no CMS) — deployed to GitHub Pages via static export
 
 ## Phase 1: Planning & Design (Week 1-2)
 
@@ -48,6 +48,9 @@ _Last updated: 2025-08-10_
   - Video content planning for hero section
   - Icon and illustration needs
   - Photography style guide for future content
+  - Move provided assets into `public/images/`; standardize filenames (kebab-case)
+  - Optimize images (WebP/JPEG) and generate responsive sizes (e.g., 640/960/1280/1600/1920)
+  - Define art direction for hero imagery (mobile-first crops) aligned with feminine, adventurous brand
 
 ## Phase 2: Development Setup (Week 3)
 
@@ -57,15 +60,8 @@ _Last updated: 2025-08-10_
 
   - Choose technology stack (React/Next.js recommended)
   - Set up development environment
-  - Configure build tools and deployment pipeline
+  - Configure build tools and deployment pipeline (Next.js static export + GitHub Actions for GitHub Pages)
   - Set up version control and project structure
-
-- [x] **CMS Integration Planning (Started)**
-
-  - Evaluate CMS options (Strapi, Contentful, or headless WordPress)
-  - Design content models and relationships
-  - Plan content management workflows
-  - Set up development CMS instance
 
 - [ ] **Performance & SEO Foundation**
   - Implement core web vitals optimization
@@ -131,18 +127,10 @@ _Last updated: 2025-08-10_
 - [x] **Interactive Features (In Progress)**
 
   - Animated quote slider
-  - Instagram feed integration
+  - Instagram feed integration (static or client-side fetch with CORS-safe endpoint; avoid server routes)
   - Advanced hover effects
   - Smooth page transitions
   - Loading animations
-
-- [ ] **CMS Integration**
-
-  - Content management system setup
-  - Dynamic content rendering
-  - Image and media management
-  - Blog post management
-  - Portfolio item management
 
 - [ ] **Performance Optimization**
   - Image optimization and compression
@@ -160,12 +148,19 @@ _Last updated: 2025-08-10_
   - Cross-browser testing
   - Mobile device testing
   - Performance testing and optimization
-  - Accessibility testing (WCAG compliance)
+  - Accessibility testing (WCAG 2.1 AA compliance)
+    - Keyboard-only navigation across all pages and components (nav, sliders, lightbox, forms)
+    - "Skip to content" link is present and visible on focus
+    - Focus management on route changes and in dialogs/lightbox; no focus traps
+    - Contrast checks pass for text, large text, and UI components
+    - `prefers-reduced-motion` respected; reduced/no-motion variant verified
+    - Alt text present and meaningful; captions/transcripts for media where applicable; no auto-play audio
+    - Forms have labels, descriptions, and accessible error messaging (aria-live); not color-only
+    - Lighthouse Accessibility ≥ 90 and screen reader smoke test
   - User acceptance testing
 
 - [ ] **Content Population**
 
-  - Populate CMS with sample content
   - Optimize all images and media
   - Set up meta descriptions and SEO
   - Configure analytics and tracking
@@ -174,47 +169,29 @@ _Last updated: 2025-08-10_
   - Final performance optimization
   - Security review and implementation
   - Backup and recovery procedures
-  - Monitoring and alerting setup
+  - Monitoring and alerting setup (GitHub Pages + lightweight analytics)
   - Launch checklist completion
 
-## Technology Stack Recommendations
+## Technology Stack
 
-### Frontend
-
-- **Framework:** Next.js 14+ (React-based)
-- **Styling:** Tailwind CSS + custom CSS
-- **Animations:** Framer Motion
-- **State Management:** React Context or Zustand
-- **Forms:** React Hook Form + validation
-
-### Backend & CMS
-
-- **CMS:** Strapi (self-hosted) or Contentful
-- **Database:** SQLite for development, PostgreSQL for production
-- **API:** RESTful or GraphQL
-- **Authentication:** NextAuth.js
-
-### Performance & SEO
-
-- **Image Optimization:** Next.js Image component
-- **SEO:** Next.js built-in SEO features
-- **Analytics:** Google Analytics 4
-- **Performance:** Core Web Vitals monitoring
-
-### Deployment
-
-- **Hosting:** Vercel (recommended) or Netlify
-- **Domain:** Custom domain with SSL
-- **CDN:** Built-in with hosting platform
-- **Monitoring:** Vercel Analytics or similar
+- Frontend: Next.js 14+ (App Router) with TypeScript
+- Styling: Tailwind CSS; avoid CSS-in-JS
+- Components: Server Components by default; Client Components only when needed (animations, forms)
+- State: React Context only; avoid additional global state libraries
+- Forms: Native HTML validation; submissions via Next.js API routes; add lightweight client-side validation if needed
+- Content: Static content (MDX/JSON) for all pages; no CMS and no database
+- Images: `next/image` with responsive sizes and lazy loading
+- SEO: Next.js Metadata API (OpenGraph, Twitter)
+- Analytics: Google Analytics 4
+- Deployment: GitHub Pages via static export; custom domain with SSL (GitHub Pages)
+- Constraints: Keep dependencies minimal; do not add new libraries outside this stack without approval
 
 ## Risk Assessment & Mitigation
 
 ### High-Risk Items
 
 1. **Content Creation Timeline** - Mitigation: Start content creation early, use placeholders
-2. **CMS Integration Complexity** - Mitigation: Choose well-documented CMS, plan integration early
-3. **Performance Requirements** - Mitigation: Implement performance monitoring from day one
+2. **Performance Requirements** - Mitigation: Implement performance monitoring from day one
 
 ### Medium-Risk Items
 
@@ -253,22 +230,3 @@ _Last updated: 2025-08-10_
 - Performance monitoring
 - Security updates
 - Feature enhancements based on user feedback
-
-## Resource Requirements
-
-### Development Team
-
-- **Frontend Developer:** 1 (full-time)
-- **Backend Developer:** 0.5 (part-time)
-- **Designer:** 0.5 (part-time)
-- **Project Manager:** 0.25 (part-time)
-
-### Tools & Services
-
-- Design tools: Figma, Adobe Creative Suite
-- Development tools: VS Code, Git, npm/yarn
-- Testing tools: BrowserStack, Lighthouse
-- CMS hosting and maintenance
-- Domain and hosting services
-
-This plan provides a structured approach to building the influencer portfolio website while ensuring quality, performance, and maintainability throughout the development process.

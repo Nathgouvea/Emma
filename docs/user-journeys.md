@@ -26,5 +26,3 @@
 - Persistent sticky nav with clear labels.
 - Footer with redundant links and contact.
 - Breadcrumbs not required for flat IA, but consider on Blog detail pages later.
-
-

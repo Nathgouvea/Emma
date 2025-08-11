@@ -36,5 +36,3 @@ Notes
 
 - Sticky nav and footer provide cross-links at every step.
 - Ensure visible focus and logical tab order throughout.
-
-

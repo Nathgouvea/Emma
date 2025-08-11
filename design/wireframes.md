@@ -68,5 +68,3 @@ flowchart TB
   E[Footer]
   A-->B-->C-->D-->E
 ```
-
-

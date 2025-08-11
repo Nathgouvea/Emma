@@ -24,5 +24,3 @@ Type system supports magazine-like feel with script accents and clean sans-serif
 
 - One H1 per page. Use script accent for select words in hero/taglines only.
 - Maintain readable line lengths (45–75ch for body text).
-
-
