@@ -3,6 +3,9 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import SiteNav from "@/components/nav/SiteNav";
 import SiteFooter from "@/components/footer/SiteFooter";
+import FollowBar from "@/components/nav/FollowBar";
+import PerformanceMonitor from "@/components/PerformanceMonitor";
+import AccessibilityTester from "@/components/AccessibilityTester";
 
 export const metadata: Metadata = {
   title: {
@@ -78,12 +81,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="min-h-screen bg-white text-neutral-900 antialiased">
+        <PerformanceMonitor />
+        <AccessibilityTester />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:text-sm focus:shadow"
         >
           Skip to content
         </a>
+        <FollowBar />
         <SiteNav />
         <div className="pt-2 sm:pt-4 lg:pt-6">{children}</div>
         <SiteFooter />

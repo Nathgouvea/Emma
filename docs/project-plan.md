@@ -1,6 +1,6 @@
 # Influencer Portfolio Website - Project Plan
 
-_Last updated: 2025-08-10_
+_Last updated: 2025-08-11_
 
 ## Project Overview
 
@@ -127,7 +127,7 @@ _Last updated: 2025-08-10_
 - [x] **Interactive Features (In Progress)**
 
   - Animated quote slider
-  - Instagram feed integration (static or client-side fetch with CORS-safe endpoint; avoid server routes)
+  - Instagram feed integration (static JSON + client fetch using `next/image`)
   - Advanced hover effects
   - Smooth page transitions
   - Loading animations
@@ -178,8 +178,8 @@ _Last updated: 2025-08-10_
 - Styling: Tailwind CSS; avoid CSS-in-JS
 - Components: Server Components by default; Client Components only when needed (animations, forms)
 - State: React Context only; avoid additional global state libraries
-- Forms: Native HTML validation; submissions via Next.js API routes; add lightweight client-side validation if needed
-- Content: Static content (MDX/JSON) for all pages; no CMS and no database
+- Forms: Native HTML validation; submissions via mailto or third-party (if approved); no custom server
+- Content: Static content (MDX/JSON) for all pages; CMS out of scope per rules
 - Images: `next/image` with responsive sizes and lazy loading
 - SEO: Next.js Metadata API (OpenGraph, Twitter)
 - Analytics: Google Analytics 4

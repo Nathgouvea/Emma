@@ -1,9 +1,12 @@
 import Hero from "@/components/home/Hero";
+import InstagramFeed from "@/components/home/InstagramFeed";
+import QuoteSlider from "@/components/home/QuoteSlider";
 
 export default function HomePage() {
   return (
     <main id="main" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <Hero />
+      <QuoteSlider />
       <div
         className="parallax-bg my-12 rounded-lg border border-neutral-200 min-h-[40vh]"
         style={{
@@ -21,6 +24,8 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <InstagramFeed />
     </main>
   );
 }

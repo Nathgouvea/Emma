@@ -9,6 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         sand: "#F3E8DE",
+        sandy: "#F3E8DE", // Alias for consistency
         coral: "#FF7F8A",
         sunrise: "#FFC466",
         ocean: "#3A86FF",
